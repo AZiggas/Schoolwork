@@ -1,0 +1,40 @@
+Andrew Ziggas
+
+HW 3
+
+Terminals:
+
+ENTER -> \bEnter\b
+EXIT -> \bExit\b
+EXITMULT -> \bExeunt\b
+ALL -> \bomnes\b
+AND -> \band\b
+ACTOR -> \b(Romeo|Juliet|Tybalt|Benvolio|Othello)\b
+LBRACKET -> \[
+RBRACKET -> \]
+COMMA -> [,]
+PUNCP -> [.]
+PUNCQ -> [?]
+PUNCE -> [!]
+COLON -> [:]
+IOLINES -> (?i)\b(Speak\s+your\s+mind|Open\s+your\s+mind|Open\s+your\s+heart|Listen\s+to\s+your\s+heart)\b
+wordlist -> XYZ
+
+Non-Terminals:
+
+S -> Title Dramatis-personae actlist
+Title -> wordlist Punctuation
+Dramatis-personae -> ACTOR COMMA wordlist Punctuation | ACTOR COMMA wordlist Punctuation Dramatis-personae
+actlist -> statement-list
+statement-list -> statement statement-list | lambda
+statement -> LBRACKET enter-stmt | LBRACKET exit-stmt | line
+enter-stmt -> ENTER ACTOR RBRACKET | ENTER ACTOR enter-and | ENTER ACTOR enter-cont
+enter-and -> AND ACTOR RBRACKET
+enter-cont -> COMMA ACTOR enter-cont | enter-and
+exit-stmt -> EXIT ACTOR RBRACKET | EXITMULT ACTOR exit-and | EXITMULT ACTOR exit-cont | EXITMULT RBRACKET | EXITMULT ALL RBRACKET
+exit-and -> AND ACTOR RBRACKET
+exit-cont -> COMMA ACTOR exit-cont | exit-and
+line -> ACTOR COLON sentence
+sentence -> io
+io -> IOLINES PUNCP | IOLINES PUNCE
+Punctuation -> PUNCP | PUNCQ | PUNCE

@@ -1,0 +1,22 @@
+Andrew Ziggas
+
+HW 2
+
+Terminals:
+
+PuncP --> [.]
+PuncQ --> [?]
+PuncE --> [!]
+Actor --> ...big regex...
+Comma --> [,]
+IOLines --> (?i)(Speak\syour\smind|Open\syour\smind|Open\syour\sheart|Listen\sto\syour\sheart)
+
+Non-Terminals:
+
+S --> Title Dramatis-personae actlist
+Title --> wordlist Period | wordlist QuestionMark | wordlist ExclamationPoint
+Dramatis-personae --> Actor Comma wordlist Punctuation | Actor Comma wordlist Punctuation Dramatis-personae
+wordlist --> ...List of words...
+actlist --> ...Productions for the acts and scenes...
+io --> IOLines PuncP | IOLines PuncE
+Punctuation --> PuncP | PuncQ | PuncE

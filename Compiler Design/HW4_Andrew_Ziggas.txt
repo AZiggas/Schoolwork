@@ -1,0 +1,53 @@
+Andrew Ziggas
+
+HW 4
+
+Terminals:
+
+ENTER -> \bEnter\b
+EXIT -> \bExit\b
+EXITMULT -> \bExeunt\b
+ALL -> \bomnes\b
+AND -> \band\b
+YOU -> \b(you|thou)\b
+ARE -> \b(are|art)\b
+A -> \ba\b
+AN -> \ban\b
+THE -> \bthe\b
+ACTOR -> \b(Romeo|Juliet|Tybalt|Benvolio|Othello)\b
+LBRACKET -> \[
+RBRACKET -> \]
+COMMA -> [,]
+PUNCP -> [.]
+PUNCQ -> [?]
+PUNCE -> [!]
+COLON -> [:]
+IOLINES -> \b(Speak\s+your\s+mind|Open\s+your\s+mind|Open\s+your\s+heart|Listen\s+to\s+your\s+heart)\b
+wordlist -> XYZ
+POS_NOUN -> \b(queen|peach|mountaineer|handbag|plum|summer's\s+day)\b
+NEG_NOUN -> \b(toad|barbermonger|fustilarian)\b
+POS_ADJ -> \b(sunny|wonderful|amazing|cunning|lovely|fine|gentle|handsome|lovely|peaceful)\b
+NEG_ADJ -> \b(featureless|vile|ugly)\b
+
+Non-Terminals:
+
+S -> Title Dramatis-personae actlist
+Title -> wordlist Punctuation
+Dramatis-personae -> ACTOR COMMA wordlist Punctuation | ACTOR COMMA wordlist Punctuation Dramatis-personae
+actlist -> statement-list
+statement-list -> statement statement-list | lambda
+statement -> LBRACKET enter-stmt | LBRACKET exit-stmt | line
+enter-stmt -> ENTER ACTOR RBRACKET | ENTER ACTOR enter-and | ENTER ACTOR enter-cont
+enter-and -> AND ACTOR RBRACKET
+enter-cont -> COMMA ACTOR enter-cont | enter-and
+exit-stmt -> EXIT ACTOR RBRACKET | EXITMULT ACTOR exit-and | EXITMULT ACTOR exit-cont | EXITMULT RBRACKET | EXITMULT ALL RBRACKET
+exit-and -> AND ACTOR RBRACKET
+exit-cont -> COMMA ACTOR exit-cont | exit-and
+line -> ACTOR COLON sentence
+sentence -> io PUNCP | io PUNCE | assignment PUNCP | assignment PUNCE
+assignment -> YOU ARE article adjective noun
+article -> A | AN | THE
+noun -> POS_NOUN | NEG_NOUN
+adjective -> POS_ADJ | NEG_ADJ | POS_ADJ adjective | NEG_ADJ adjective | lambda
+io -> IOLINES | IOLINES
+Punctuation -> PUNCP | PUNCQ | PUNCE

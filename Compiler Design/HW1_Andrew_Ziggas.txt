@@ -1,0 +1,17 @@
+Andrew Ziggas
+
+HW 1
+
+Terminals:
+
+Punc --> [.?!]
+Actor --> ...big regex...
+Comma --> [,]
+
+Non-Terminals:
+
+S --> Title Dramatis-personae actlist
+Title --> Wordlist Punc
+Dramatis-personae --> Actor Comma wordlist Punc | Actor Comma wordlist Punc Dramatis-personae
+wordlist --> ...List of words...
+actlist --> ...Productions for the acts and scenes...

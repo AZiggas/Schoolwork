@@ -1,0 +1,105 @@
+Andrew Ziggas
+
+COMMA -> [,]
+PUNCP -> [.]
+PUNCQ -> [?]
+PUNCE -> [!]
+COLON -> [:]
+SPEAK_YOUR_MIND -> \bspeak\s+your\s+mind\b
+OPEN_YOUR_MIND -> \bopen\s+\your\s+mind\b
+OPEN_YOUR_HEART -> \bopen\s+your\s+heart\b
+LISTEN_TO_YOUR_HEART -> \blisten\s+to\s+your\s+heart\b
+THE_SUM_OF -> \bthe\s+sum\s+of\b
+THE_DIFFERENCE_BETWEEN -> \bthe\s+difference\s+between\b
+THE_PRODUCT_OF -> \bthe\s+product\s+of\b
+THE_QUOTIENT_OF -> \bthe\s+quotient\s+of\b
+THE_QUOTIENT_BETWEEN -> \bthe\s+quotient\s+between\b
+THE_REMAINDER_OF -> \bthe\s+remainder\s+of\b
+THE_REMAINDER_BETWEEN -> \bthe\s+remainder\s+between\b
+THE_POWER_OF -> \bthe\s+(square|cube)\s+of\b
+THE_ROOT_OF -> \bthe\s+(square)\s+root\s+of\b
+THE_OPPOSITE_OF -> \bthe\s+opposite\s+of\b
+NUM_TIMES -> \b(half|twice|thrice)\b
+PROCEED -> \b(proceed\s+to|proceed\s+posthaste\s+to)\b
+LET_US -> \b(let\s+us)\b
+WE_SHALL -> \b(we\s+(shall|must|ought\s+to))\b
+RETURN -> \breturn\b
+BOTH -> \bboth\b
+EITHER -> \beither\b
+YOU -> \b(you|thou)\b
+ARE -> \b(are|art)\b
+ACT -> \b(act\s+(M{1,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})|M{0,4}(CM|C?D|D?C{1,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})|M{0,4}(CM|CD|D?C{0,3})(XC|X?L|L?X{1,3})(IX|IV|V?I{0,3})|M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|I?V|V?I{1,3})))\b
+SCENE -> \b(scene\s+(M{1,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})|M{0,4}(CM|C?D|D?C{1,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})|M{0,4}(CM|CD|D?C{0,3})(XC|X?L|L?X{1,3})(IX|IV|V?I{0,3})|M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|I?V|V?I{1,3})))\b
+ACTOR -> \b(Aaron|Achilles|Adam|Ajax|All\s+Citizens|All\s+Conspirators|All\s+Ladies|All\s+Servants|The\s+Ghost|All\s+The\s+Goths|All\s+The\s+People|Ambassador|Angelo|Antonio|Apparition|Ariel|Bandit|Banquo|Bastard\s+of\s+Orleans|Bawd|Beatrice|Benvolio|Bianca|Blunt|Boatswain|Bolingbroke|Bottom|Boy|Brutus|Caesar|Captain|Capulet|Cassius|Charles|Charles,\s+King\s+of\s+France|Christopher\s+Sly|Cicero|Cinna\s+the\s+Poet|Claudius|Cromwell|Cymbeline|Desdemona|Dick\s+the\s+Butcher|Doctor\s+Butts|Dogberry|Doll\s+Tearsheet|Duke\s+of\s+Bourbon|Dull|Duncan|Egyptian|Elbow|Emilia|Essex|Fang|First\s+Murderer|Fortinbras|Francis\s+Feeble|George\s+Bevis|Gertrude|Girl|Goth|Haberdasher|Hamlet|Hector|Helen|Henry\s+VIII|Henry\s+IV|Henry\s+VI|Henry\s+V|Henry|Horatio|Hostess\s+Quickly|Hotspur|Iago|Isabella|Jacques|Jessica|Justice|Juliet|Katharine|Keeper|King\s+Richard\s+II|Lady\s+Macbeth|Lady\s+Macduff|Lear|Lennox|Macbeth|Macduff|Malcolm|Man|Messenger|Mustardseed|Nobleman|Norwegian\s+Captain|Nurse|Oberon|Octavius|Old\s+Gobbo|Old\s+Lady|Old\s+Man|Ophelia|Oswald|Othello|Outlaws|Paris|Peaseblossom|Pedant|Philip\s+the\s+Bastard|Pirate|Poet|Portia|Prospero|Queen\s+Elizabeth|Quince|Ralph\s+Mouldy|Richard|Robin|Robin|Romeo|Sergeant|Servant|Sewer|Sexton|Shylock|Simon\s+Shadow|Simpcox|Simpcox's\s+Wife|Slender|Soldier|Some\s+Others|Snout|Snug|Son|Soothsayer|Speed|Spirit|Starveling|Thieves|Thomas\s+Wart|Titus|Touchstone|Tybalt|Ulysses|Umbriel|Vaux|Vernon|Viola|Voltemand|Walter\s+Whitmore|Watchman|Widow|William|Xerxes|Young\s+Cato|Zanzibar)\b
+ARTICLE -> \b(a|an|the)\b
+POS_NOUN -> \b(angel|animal|aunt|bower|brother|canopy|castle|cat|choir|cow|daughter|dewdrop|father|flower|goat|grace|hair|hamster|hero|horse|hound|joy|king|kingdom|lad|lord|medicine|mistletoe|moonbeam|mother|mountaineer|nose|olympian|peach|phoenix|plum|pony|prince|princess|purse|queen|roman|rose|skim\s+milk|sky|son|Sparticus|squirrel|stone|summer's\s+day|tanling |thing|town|uncle|visage|wall)\b
+NEG_NOUN -> \b(addiction|assassination|barbermonger|bastard|bawd|blister|boil|bondman|carbuncle|chihuahua|codpiece|coward|cuckold|dunghill|eel-skin|fever|flesh-monger|flibbertigibbet|flirt-gill|fustilarian|grave|guts|hag|hog|hovel|knave|knavery|leech|liar|loon|lout|minion|mother-in-law|mud|pig|plague|puke|rampallian|ruffian|scullion|sepulchre|shriveled up piece of shoe leather|skull|spleen|starvelling|sty|sunburn|tallow-catch|toad|torture|traitor|varlet|weasel|winter's day|worm|wormwood)\b
+POS_ADJ -> \b(admirable|amazing|attractive|beautiful|bedazzled|big|black|bluest|bold|bottomless|brave|charming|clearest|cunning|cute|dauntless|dazzling|determined|embroidered|excellent|fair|fancy|fashionable|fine|friendly|furry|gentle|glorious|gloved|golden|good|handsome|happy|healthy|honest|invulnerable|ingenious|just|large|lovely|loving|meet|mighty|new-fangled|noble|noiseless|normal|peaceful|pretty|prompt|proud|quick|red|reddest|rich|royal|safe|smooth|stout-hearted|sunny|sweet|sweetest|trustworthy|warm|white|wonderful|yellow|zany)\b
+NEG_ADJ -> \b(afeard|awful|arrant|bad|base|batty|bloodsucking|cheap|cowardly|coy|craven|cursed|demure|dirty|disgusting|dishonest|dumb|dusty|evil|fat-kidneyed|fatherless|fat|featureless|foul|green-eyed|hairy|half-witted|hard|hateful|hideous|horrible|horrid|huge|ill|infected|lackluster|little|lying|melancholy|miserable|misused|muddy|obsequious|old|oozing|poor|remorseless|rotten|rural|sickly|small|smelly|snotty|sorry|stinking|stormy|stuffed|stupid|tardy|timid|tiny|ugly|untruthful|vile|villainous|weak|worthless|worried)\b
+LBRACKET -> \[
+RBRACKET -> \]
+YEA -> \b(yea|verily|indeed|forsooth)\b
+NAY -> \b(nay)\b
+PERHAPS -> \b(peradventure|perchance)\b
+IF_SO -> \b(if\s+so)\b
+IF_NOT -> \b(if\s+not)\b
+ENTER -> \bEnter\b
+EXIT -> \bExit\b
+EXEUNT -> \bExeunt\b
+OMNES -> \bomnes\b
+AND -> \band\b
+OR -> \bor\b
+AS -> \bas\b
+I -> \bI\b
+AM -> \bam\b
+IS -> \bis\b
+GREATER_THAN -> \b((better|greater)\s+than)\b
+LESS_THAN -> \b(worse|less)\s+than\b
+AT_MOST -> \bat\s+most\b
+AT_LEAST -> \bat\s+least\b
+DIFFERENT_FROM -> \bdifferent\s+from\b
+MORE -> \bmore\b
+LESS -> \bless\b
+THAN -> \bthan\b
+RECALL -> \brecall\b
+REMEMBER -> \bremember\b
+POSSESSIVE -> \b(my|your|his|her)\b
+MYSELF -> \b(myself|me)\b
+YOURSELF -> \byourself|thyself\b
+NOTHING -> \bnothing\b
+WORDLIST -> \bXYZ\b
+
+S -> Title Dramatis-personae act-def scene-def actlist
+transit-start -> act-def scene-def actlist | scene-def actlist
+Title -> WORDLIST peq
+peq -> PUNCP | PUNCQ | PUNCE
+pe -> PUNCP | PUNCE
+Dramatis-personae -> ACTOR COMMA WORDLIST peq | ACTOR COMMA WORDLIST peq Dramatis-personae
+actlist -> statement-list
+statement-list -> statement statement-list | lambda
+statement -> LBRACKET enter-stmt | LBRACKET exit-stmt | line | transit-start
+line -> ACTOR COLON addressee sentence
+sentence -> io pe | interjection assignment pe | interjection assignment pe sentence | LET_US PROCEED act-transit | WE_SHALL PROCEED act-transit | LET_US RETURN pe | WE_SHALL RETURN pe | question PUNCQ | question PUNCQ if | interjection stack
+addressee -> ACTOR COMMA | lambda
+interjection -> NAY COMMA | YEA COMMA | PERHAPS COMMA | lambda
+act-def -> ACT COLON WORDLIST peq
+scene-def -> SCENE COLON WORDLIST peq
+act-transit -> ACT COMMA SCENE pe
+io -> SPEAK_YOUR_MIND | OPEN_YOUR_MIND | OPEN_YOUR_HEART | LISTEN_TO_YOUR_HEART
+enter-stmt -> ENTER ACTOR RBRACKET | ENTER actorlist RBRACKET
+exit-stmt -> EXIT ACTOR RBRACKET | EXEUNT actorlist  RBRACKET | EXEUNT OMNES RBRACKET | EXEUNT RBRACKET
+assignment -> YOU ARE asmt | YOU ARE asmt-as | I AM asmt | I AM asmt-as | YOU adjectivelist noun
+asmt -> ARTICLE adjectivelist noun | POSSESSIVE adjectivelist noun | MYSELF | YOURSELF | ACTOR | NOTHING | operation | logic | YOU
+asmt-as -> AS adjective AS ARTICLE adjectivelist noun | AS adjective AS operation | AS adjective AS logic | AS adjective AS MYSELF | AS adjective AS ACTOR | AS adjective AS YOURSELF | AS adjective AS YOU
+actorlist -> ACTOR COMMA actorlist | ACTOR AND ACTOR
+logic -> EITHER operationlist OR operationlist | BOTH operationlist AND operationlist
+operation ->  mathlist operationlist AND operationlist | THE_POWER_OF operationlist | THE_ROOT_OF operationlist | THE_OPPOSITE_OF operationlist | NUM_TIMES operationlist
+operationlist -> ARTICLE adjectivelist noun | operation | YOURSELF | MYSELF | ACTOR | NOTHING
+mathlist -> THE_SUM_OF | THE_DIFFERENCE_BETWEEN | THE_PRODUCT_OF | THE_QUOTIENT_OF | THE_QUOTIENT_BETWEEN | THE_REMAINDER_OF | THE_REMAINDER_BETWEEN | THE_POWER_OF | THE_ROOT_OF | NUM_TIMES | THE_OPPOSITE_OF
+question -> AM I question-list | ARE YOU question-list | IS asmt question-list
+question-list -> GREATER_THAN asmt | LESS_THAN asmt | MORE adjective THAN asmt| LESS adjective THAN asmt | AT_LEAST asmt-as | AT_MOST asmt-as | DIFFERENT_FROM asmt | asmt-as
+if -> IF_SO COMMA sentence | IF_SO COMMA sentence if | IF_NOT COMMA sentence | IF_NOT COMMA sentence if
+stack -> REMEMBER asmt pe | REMEMBER WORDLIST pe | REMEMBER asmt pe stack | REMEMBER WORDLIST pe stack | RECALL asmt pe | RECALL WORDLIST pe | RECALL asmt pe stack | RECALL WORDLIST pe stack
+noun -> POS_NOUN | NEG_NOUN
+adjective -> POS_ADJ | NEG_ADJ
+adjectivelist -> POS_ADJ adjectivelist | NEG_ADJ adjectivelist | lambda

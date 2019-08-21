@@ -1,0 +1,73 @@
+Andrew Ziggas
+
+ACTOR -> \b(Romeo|Juliet|Tybalt|Benvolio|Othello)\b
+COMMA -> [,]
+PUNCP -> [.]
+PUNCQ -> [?]
+PUNCE -> [!]
+COLON -> [:]
+SPEAK_YOUR_MIND -> \bspeak\s+your\s+mind\b
+OPEN_YOUR_MIND -> \bopen\s+\your\s+mind\b
+OPEN_YOUR_HEART -> \bopen\s+your\s+heart\b
+LISTEN_TO_YOUR_HEART -> \blisten\s+to\s+your\s+heart\b
+THE_SUM_OF -> \bthe\s+sum\s+of\b
+THE_DIFFERENCE_BETWEEN -> \bthe\s+difference\s+between\b
+THE_PRODUCT_OF -> \bthe\s+product\s+of\b
+THE_QUOTIENT_OF -> \bthe\s+quotient\s+of\b
+THE_QUOTIENT_BETWEEN -> \bthe\s+quotient\s+between\b
+THE_REMAINDER_OF -> \bthe\s+remainder\s+of\b
+THE_REMAINDER_BETWEEN -> \bthe\s+remainder\s+between\b
+THE_POWER_OF -> \bthe\s+(square|cube)\s+of\b
+THE_ROOT_OF -> \bthe\s+(square)\s+root\s+of\b
+THE_OPPOSITE_OF -> \bthe\s+opposite\s+of\b
+NUM_TIMES -> \b(half|twice|thrice)\b
+BOTH -> \bboth\b
+EITHER -> \beither\b
+YOU -> \b(you|thou)\b
+ARE -> \b(are|art)\b
+ARTICLE -> \b(a|an|the)\b
+POS_NOUN -> \b(purse|king|queen|lad|pony|peach|mountaineer|handbag|plum|summer's\s+day)\b
+NEG_NOUN -> \b(flibbertigibbet|hag|ruffian|toad|barbermonger|fustilarian)\b
+POS_ADJ -> \b(fancy|good|red|embroidered|beautiful|mighty|sunny|wonderful|amazing|cunning|lovely|fine|gentle|handsome|lovely|peaceful)\b
+NEG_ADJ -> \b(dishonest|wretched|featureless|vile|ugly)\b
+LBRACKET -> \[
+RBRACKET -> \]
+ENTER -> \bEnter\b
+EXIT -> \bExit\b
+EXEUNT -> \bExeunt\b
+OMNES -> \bomnes\b
+AND -> \band\b
+OR -> \bor\b
+AS -> \bas\b
+I -> \bI\b
+AM -> \bam\b
+POSSESSIVE -> \b(my|your|his|her)\b
+MYSELF -> \bmyself\b
+YOURSELF -> \byourself|thyself\b
+NOTHING -> \bnothing\b
+wordlist -> \bXYZ\b
+
+S -> Title Dramatis-personae actlist
+Title -> wordlist peq
+peq -> PUNCP | PUNCQ | PUNCE
+pe -> PUNCP | PUNCE
+Dramatis-personae -> ACTOR COMMA wordlist peq | ACTOR COMMA wordlist peq Dramatis-personae
+actlist -> statement-list
+statement-list -> statement statement-list | lambda
+statement -> LBRACKET enter-stmt | LBRACKET exit-stmt | line
+line -> ACTOR COLON sentence
+sentence -> io pe | assignment pe
+io -> SPEAK_YOUR_MIND | OPEN_YOUR_MIND | OPEN_YOUR_HEART | LISTEN_TO_YOUR_HEART
+enter-stmt -> ENTER ACTOR RBRACKET | ENTER actorlist RBRACKET
+exit-stmt -> EXIT ACTOR RBRACKET | EXEUNT actorlist  RBRACKET | EXEUNT OMNES RBRACKET | EXEUNT RBRACKET
+assignment -> YOU ARE asmt | YOU ARE asmt-as | I AM asmt | I AM asmt-as | YOU adjectivelist noun
+asmt -> ARTICLE adjectivelist noun | POSSESSIVE adjectivelist noun | MYSELF | YOURSELF | ACTOR | NOTHING | operation | logic
+asmt-as -> AS adjective AS ARTICLE adjectivelist noun | AS adjective AS operation | AS adjective AS logic | AS adjective AS MYSELF | AS adjective AS ACTOR | AS adjective AS YOURSELF
+actorlist -> ACTOR COMMA actorlist | ACTOR AND ACTOR
+logic -> EITHER operationlist OR operationlist | BOTH operationlist AND operationlist
+operation ->  mathlist operationlist AND operationlist | THE_POWER_OF operationlist | THE_ROOT_OF operationlist | THE_OPPOSITE_OF operationlist | NUM_TIMES operationlist
+operationlist -> ARTICLE adjectivelist noun | operation | YOURSELF | MYSELF | ACTOR | NOTHING
+mathlist -> THE_SUM_OF | THE_DIFFERENCE_BETWEEN | THE_PRODUCT_OF | THE_QUOTIENT_OF | THE_QUOTIENT_BETWEEN | THE_REMAINDER_OF | THE_REMAINDER_BETWEEN | THE_POWER_OF | THE_ROOT_OF | NUM_TIMES | THE_OPPOSITE_OF
+noun -> POS_NOUN | NEG_NOUN
+adjective -> POS_ADJ | NEG_ADJ
+adjectivelist -> POS_ADJ adjectivelist | NEG_ADJ adjectivelist | lambda
